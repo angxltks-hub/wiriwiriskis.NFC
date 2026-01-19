@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WIRIWIRISKIS AUTHENTIC</title>
+
+<style>
+body{
+  margin:0;
+  background:#000;
+  font-family:system-ui, Arial, sans-serif;
+  display:flex;
+  justify-content:center;
+}
+.wrap{
+  max-width:480px;
+  width:100%;
+  background:#fff;
+  padding:20px;
+  text-align:center;
+}
+.title{
+  font-size:46px;
+  font-weight:900;
+  margin:10px 0 5px;
+}
+.subtitle{
+  font-weight:700;
+  margin-bottom:15px;
+}
+.product img{
+  width:100%;
+  max-width:420px;
+}
+.meta{
+  margin:20px 0;
+}
+.scan{
+  font-size:36px;
+  font-weight:900;
+}
+.verify img{
+  width:280px;
+  margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <!-- IMAGEN DEL PRODUCTO -->
+  <div class="product">
+    <img src="image/logo.png" alt="WIRIWIRISKIS CAP">
+  </div>
+
+  <h1 class="title">AUTHENTIC</h1>
+  <div class="subtitle">WIRIWIRISKIS CHROME (LAST EDITION)</div>
+
+  <!-- CONTADOR -->
+  <div class="meta">
+    <div>TOTAL SCAN COUNT</div>
+    <div class="scan"><span id="visitCount">1</span> SCANS</div>
+  </div>
+
+  <!-- BOTÓN VERIFY -->
+  <div class="verify">
+    <img src="image/verify.png" alt="VERIFY NFC">
+  </div>
+
+</div>
+
+<script>
+const key = 'visitCount_' + location.pathname;
+let count = localStorage.getItem(key);
+count = count ? parseInt(count) + 1 : 1;
+localStorage.setItem(key, count);
+document.getElementById('visitCount').innerText = count;
+</script>
+
+</body>
+</html>
